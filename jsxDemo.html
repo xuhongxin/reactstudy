@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name = "viewport" content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <script src="node_modules/react/umd/react.development.js"></script>
+        <script src="node_modules/react-dom/umd/react-dom.development.js"></script>
+        <script src="node_modules/babel-standalone/babel.min.js"></script>
+        <style>
+            .demostyle{
+                color:darkorange
+            }
+        </style>
+</head>
+<body>
+    <div id="demoReact">
+
+    </div>
+    <script type="text/babel">
+        let MyDom=<div>
+                {/* i am a  annotation*/}
+                hello
+            </div>
+
+        {/* if use multi div,you need a parent div and it is best to use parentheses */}
+        let MyMultiDiv=(<div>
+                <div>我是第一个标签</div><div>我是第二个标签</div>
+            </div>)
+        
+        function fun(obj){
+            return "name is"+obj.name+",age is"+obj.age;
+        }    
+
+        let text="hello,world";
+        let num = 9527;
+        let user={
+            name:"小明",
+            age:18
+        }
+
+         {/* 数组 */}
+         var arr=[
+            <p>news list 1</p>,
+            <p>news list 2</p>,
+            <p>news list 3</p>,
+            <p>news list 4</p>,
+        ]
+        let phone = 3999;
+        let taobaoText = "taobao";
+        let linkUrl="taobao.com";
+        let style={color:"red",backgroundColor:"pink"}
+
+        let myVarDom=(
+            <div>
+                <div>{text}</div>
+                <div>{num}</div>
+                <div>{num+1}</div>
+                <div>{fun(user)}</div>
+                <div>{arr}</div>
+                <div>当前手机价格是{phone}-----{phone>4000?"很贵":"很便宜"}</div>
+                <a href={linkUrl}>{taobaoText}</a>
+                <p style={style}>样式</p>
+                <p className="demostyle">className样式</p>
+            </div>
+        )
+        ReactDOM.render(myVarDom,document.getElementById("demoReact"));
+
+
+    </script>
+</body>
+  
+</html>
